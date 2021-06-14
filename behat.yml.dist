@@ -1,0 +1,25 @@
+default:
+    suites:
+        default:
+            contexts:
+                - behatch:context:browser
+                - behatch:context:debug
+                - behatch:context:system
+                - behatch:context:json
+                - behatch:context:table
+                - behatch:context:rest
+                - behatch:context:xml
+                - Behat\MinkExtension\Context\MinkContext
+                - App\Tests\Behat\DemoContext
+                - App\Tests\Behat\ForecastContext
+
+    extensions:
+        Behatch\Extension: ~
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                environment: test
+            bootstrap: tests/bootstrap.php
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony: ~
