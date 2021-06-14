@@ -24,16 +24,16 @@ Feature:
   In order to prove that multiple interaction with the container
   doesn't work when using mink
 
-  Scenario: The first call will work                            # features/forecast.feature:6
-    Given I force the degreeInCelsius to "20"                   # App\Tests\Behat\ForecastContext::iForceTheDegreeincelsiusTo()
-    When I send a GET request to '/api/forecasts/BE'            # Behatch\Context\RestContext::iSendARequestTo()
-    And the JSON node 'degreeInCelsius' should be equal to "20" # Behatch\Context\JsonContext::theJsonNodeShouldBeEqualTo()
++  Scenario: The first call will work                            # features/forecast.feature:6
++    Given I force the degreeInCelsius to "20"                   # App\Tests\Behat\ForecastContext::iForceTheDegreeincelsiusTo()
++    When I send a GET request to '/api/forecasts/BE'            # Behatch\Context\RestContext::iSendARequestTo()
++    And the JSON node 'degreeInCelsius' should be equal to "20" # Behatch\Context\JsonContext::theJsonNodeShouldBeEqualTo()
 
-  Scenario: The first call will work                              # features/forecast.feature:12
+  Scenario: using default value works                             # features/forecast.feature:12
     When I send a GET request to '/api/forecasts/BE'              # Behatch\Context\RestContext::iSendARequestTo()
     And the JSON node 'degreeInCelsius' should be equal to "34.3" # Behatch\Context\JsonContext::theJsonNodeShouldBeEqualTo()
 
-  Scenario: The first call will work                            # features/forecast.feature:16
+  Scenario: Same as first test, but doesn't work                # features/forecast.feature:16
     Given I force the degreeInCelsius to "20"                   # App\Tests\Behat\ForecastContext::iForceTheDegreeincelsiusTo()
     When I send a GET request to '/api/forecasts/BE'            # Behatch\Context\RestContext::iSendARequestTo()
     Then the response status code should be 200                 # Behat\MinkExtension\Context\MinkContext::assertResponseStatus()
