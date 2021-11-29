@@ -12,6 +12,7 @@ default:
                 - Behat\MinkExtension\Context\MinkContext
                 - App\Tests\Behat\DemoContext
                 - App\Tests\Behat\ForecastContext
+                - App\Tests\Behat\MockContext
 
     extensions:
         Behatch\Extension: ~

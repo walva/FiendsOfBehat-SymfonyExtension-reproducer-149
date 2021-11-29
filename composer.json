@@ -78,6 +78,7 @@
         "behat/mink-extension": "^2.3",
         "friends-of-behat/mink-browserkit-driver": "^1.5",
         "friends-of-behat/symfony-extension": "^2.0",
+        "happyr/service-mocking": "^0.2.0",
         "soyuka/contexts": "^3.3"
     }
 }

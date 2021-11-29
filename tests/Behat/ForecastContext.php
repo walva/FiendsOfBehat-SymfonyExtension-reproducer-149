@@ -6,6 +6,7 @@ namespace App\Tests\Behat;
 
 use App\Service\ForecastHttpClient;
 use Behat\Behat\Context\Context;
+use Happyr\ServiceMocking\ServiceMock;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ForecastContext implements Context
@@ -22,7 +23,7 @@ class ForecastContext implements Context
     public function iForceTheDegreeincelsiusTo($value)
     {
         $client = $this->driverContainer->get(ForecastHttpClient::class);
-        $client->current = $value;
-    }
 
+        ServiceMock::next($client, 'getCurrentDegreeInCelsius', fn() => $value);
+    }
 }

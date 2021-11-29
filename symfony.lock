@@ -138,6 +138,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "happyr/service-mocking": {
+        "version": "0.2.0"
+    },
     "justinrainbow/json-schema": {
         "version": "5.2.10"
     },
